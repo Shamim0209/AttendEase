@@ -1,0 +1,43 @@
+<div class="dashboard-container">
+
+    <!-- Student Profile Section -->
+    <section class="profile-section">
+      <h2>Student Profile</h2>
+      <p><strong>Name:</strong> {{ studentProfile.name }}</p>
+      <p><strong>Class:</strong> {{ studentProfile.class }}</p>
+      <p><strong>Enrollment Number:</strong> {{ studentProfile.enrollment }}</p>
+      <p><strong>Email:</strong> {{ studentProfile.email }}</p>
+    </section>
+  
+    <!-- Join Classroom Section -->
+    <section class="join-classroom-section">
+      <h2>Join a Classroom</h2>
+      <input type="text" placeholder="Enter Class Code" />
+      <button (click)="joinClassroom()">Join Classroom</button>
+    </section>
+  
+    <!-- Attendance Table Section -->
+    <section class="attendance-section">
+      <h2>Class Attendance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Class Name</th>
+            <th>Total Classes</th>
+            <th>Attended Classes</th>
+            <th>Attendance Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let classInfo of classAttendance">
+            <td>{{ classInfo.className }}</td>
+            <td>{{ classInfo.totalClasses }}</td>
+            <td>{{ classInfo.attendedClasses }}</td>
+            <td>{{ getAttendancePercentage(classInfo.attendedClasses, classInfo.totalClasses) }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+  </div>
+  
