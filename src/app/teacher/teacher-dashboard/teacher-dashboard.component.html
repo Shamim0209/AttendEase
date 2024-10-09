@@ -1,0 +1,54 @@
+<div class="dashboard">
+    <h2>Teacher Dashboard</h2>
+  
+    <!-- Buttons for Classroom and Requests -->
+    <div class="button-container">
+      <button (click)="toggleClassroomForm()">Create Classroom</button>
+      <button (click)="toggleActiveRequests()">Active Requests</button>
+    </div>
+  
+    <!-- Popup Form for Creating Classroom -->
+    <div *ngIf="showClassroomForm" class="popup-form">
+      <h3>Create New Classroom</h3>
+      <form (ngSubmit)="createClassroom()">
+        <div>
+          <label for="classroomName">Classroom Name</label>
+          <input [(ngModel)]="classroomName" name="classroomName" required>
+        </div>
+        <div>
+          <label for="classroomDescription">Classroom Description</label>
+          <input [(ngModel)]="classroomDescription" name="classroomDescription" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input [(ngModel)]="subject" name="subject" required>
+        </div>
+        <div>
+          <label>Unique Code: {{ uniqueCode }}</label>
+        </div>
+        <button type="submit">Create</button>
+        <button type="button" (click)="toggleClassroomForm()">Close</button>
+      </form>
+    </div>
+  
+    <!-- Popup for Active Requests -->
+    <div *ngIf="showActiveRequests" class="popup-form">
+      <h3>Active Student Requests</h3>
+      
+      <button (click)="toggleActiveRequests()">Accept Requests</button>
+      <button (click)="toggleActiveRequests()" style="background-color:#e53935;">Decline Requests</button>
+    </div>
+  
+    <!-- Existing Classes -->
+    <h2 id="eclass">Existing Classes</h2>
+    <div class="existing-classes">
+      <div *ngFor="let classroom of existingClasses" class="class-card">
+        <h4>{{ classroom.name }}</h4>
+        <p>{{ classroom.description }}</p>
+        <p>No. of Students: {{ classroom.students }}</p>
+        <p>Class Code: {{ classroom.code }}</p>
+        <button (click)="takeAttendance(classroom)">Take Attendance</button>
+      </div>
+    </div>
+  </div>
+  

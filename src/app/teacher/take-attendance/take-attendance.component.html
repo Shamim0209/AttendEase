@@ -1,0 +1,33 @@
+<div class="attendance-page">
+    <h2>Take Attendance for {{ classroomName }}</h2>
+    <p style="font-weight: bolder;">Subject Code : {{classCode}}</p>
+    <p>{{ classroomDescription }}</p>
+    <p>No. of Students: {{ students.length }}</p>
+    <p>Date: {{ currentDate | date: 'fullDate' }}</p> 
+  
+    <form (ngSubmit)="submitAttendance()">
+      <table>
+        <thead>
+          <tr>
+            <th>Enrollment ID</th>
+            <th>Student Name</th>
+            <th>Present</th>
+            <th>Absent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students; let i = index">
+            <td>{{ student.enrollmentId }}</td>
+            <td>{{ student.name }}</td>
+            <td>
+              <input type="radio" [(ngModel)]="student.attendance" [value]="'present'" name="attendance_{{ i }}">
+            </td>
+            <td>
+              <input type="radio" [(ngModel)]="student.attendance" [value]="'absent'" name="attendance_{{ i }}">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit">Submit Attendance</button>
+    </form>
+</div>
