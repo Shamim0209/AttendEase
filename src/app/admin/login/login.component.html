@@ -1,15 +1,20 @@
 <div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="onSubmit()">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
       <div>
-        <label for="uniqueId">Unique ID:</label>
-        <input type="text" id="uniqueId" [(ngModel)]="uniqueId" name="uniqueId" required>
+          <label for="uniqueId">Unique ID:</label>
+          <input type="text" id="uniqueId" [(ngModel)]="uniqueId" name="uniqueId" required>
       </div>
       <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" [(ngModel)]="password" name="password" required>
       </div>
       <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
       <button type="submit">Login</button>
-    </form>
+  </form>
+
+  <!-- New User Registration Section -->
+  <div class="register-redirect">
+      <p>New user? <a routerLink="/admin/signup">Create an account</a></p>
+  </div>
 </div>

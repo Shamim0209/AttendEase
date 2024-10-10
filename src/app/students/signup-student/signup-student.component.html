@@ -2,9 +2,9 @@
     <h2>Create an Account</h2>
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" formControlName="name" placeholder="Enter your Name">
-          <div *ngIf="signupForm.get('name')?.touched" class="error-message">
+          <label for="username">Name</label>
+          <input type="text" id="username" formControlName="username" placeholder="Enter your Name">
+          <div *ngIf="signupForm.get('username')?.touched" class="error-message">
             Name is required
           </div>
       </div>
@@ -45,7 +45,7 @@
       
     </form>
     <div class="login-redirect">
-      <p>Already have an account? <a routerLink="/">Log in here</a></p>
+      <p>Already have an account? <a routerLink="/student/login">Log in here</a></p>
     </div>
   
   </div>
