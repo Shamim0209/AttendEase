@@ -107,7 +107,7 @@
         "password": "sanyaPassword789"
       },
       {
-        "enrollmentId": "56789012",
+        "enrollmentId": "56789712",
         "name": "Karan Malhotra",
         "email": "karanmalhotra@example.com",
         "attendance": "present",
@@ -182,7 +182,7 @@
         "enrollmentId": "66778899",
         "name": "Anjali Rao",
         "email": "anjalirao@example.com",
-        "attendance": "absent",
+        "attendance": "present",
         "classes": ["Kubernetes", "React", "TypeScript", "Node.js"],
         "password": "anjaliPassword888"
       },
