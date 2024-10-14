@@ -11,6 +11,7 @@ import { SignupComponent } from './admin/signup/signup.component';
 import { StudentsDashboardComponent } from './students/students-dashboard/students-dashboard.component';
 import { SignupStudentComponent } from './students/signup-student/signup-student.component';
 import { StudentLoginComponent } from './students/student-login/student-login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { StudentLoginComponent } from './students/student-login/student-login.co
     BrowserModule,
     AppRoutingModule,
     FormsModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

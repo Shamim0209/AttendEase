@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,22 +7,28 @@ import { Router } from '@angular/router';
   templateUrl: './teacher-dashboard.component.html',
   styleUrls: ['./teacher-dashboard.component.css']
 })
-export class TeacherDashboardComponent {
+export class TeacherDashboardComponent implements OnInit {
   showClassroomForm: boolean = false;
   showActiveRequests: boolean = false;
-
-  classroomName: string = '';
-  classroomDescription: string = '';
-  subject: string = '';
   uniqueCode: string = '';
+  existingClasses: any[] = [];
+  classroomName: any;
+  classroomDescription: any;
+  subject: string | undefined;
 
-  existingClasses = [
-    { name: 'Angular', description: 'Introduction to Angular', students: 30, code: 'ANG67890' },
-    { name: 'SpringBoot', description: 'Basic SpringBoot', students: 30, code: 'SPR34567' },
-    { name: 'Docker', description: 'Introduction to Docker', students: 25, code: 'DOC34521' }
-  ];
+  constructor(private http: HttpClient, private router: Router) {}
 
-  constructor(private router: Router) {}
+  ngOnInit() {
+    this.getClasses();
+  }
+
+  // Fetch Classes from db.json
+  getClasses() {
+    this.http.get<any[]>('http://localhost:3000/classes')
+      .subscribe(data => {
+        this.existingClasses = data;
+      });
+  }
 
   // Toggle Classroom Form
   toggleClassroomForm() {
@@ -41,7 +48,7 @@ export class TeacherDashboardComponent {
     this.uniqueCode = Math.random().toString(36).substr(2, 8).toUpperCase();
   }
 
-  // Create Classroom
+  // Create Classroom (In memory for now)
   createClassroom() {
     const newClassroom = {
       name: this.classroomName,

@@ -1,33 +1,55 @@
+<div class="header">
+    <h1>Attendance Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
 <div class="attendance-page">
-    <h2>Take Attendance for {{ classroomName }}</h2>
-    <p style="font-weight: bolder;">Subject Code : {{classCode}}</p>
-    <p>{{ classroomDescription }}</p>
-    <p>No. of Students: {{ students.length }}</p>
-    <p>Date: {{ currentDate | date: 'fullDate' }}</p> 
-  
-    <form (ngSubmit)="submitAttendance()">
+  <h2>Take Attendance for {{ classroomName }}</h2>
+  <p style="font-weight: bolder;">Subject Code : {{ classCode }}</p>
+  <p>{{ classroomDescription }}</p>
+  <p>No. of Students: {{ studentsCount }}</p>
+  <p>Date: {{ currentDate | date: 'fullDate' }}</p>
+
+  <form (ngSubmit)="submitAttendance()">
       <table>
-        <thead>
-          <tr>
-            <th>Enrollment ID</th>
-            <th>Student Name</th>
-            <th>Present</th>
-            <th>Absent</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let student of students; let i = index">
-            <td>{{ student.enrollmentId }}</td>
-            <td>{{ student.name }}</td>
-            <td>
-              <input type="radio" [(ngModel)]="student.attendance" [value]="'present'" name="attendance_{{ i }}">
-            </td>
-            <td>
-              <input type="radio" [(ngModel)]="student.attendance" [value]="'absent'" name="attendance_{{ i }}">
-            </td>
-          </tr>
-        </tbody>
+          <thead>
+              <tr>
+                  <th>Enrollment ID</th>
+                  <th>Student Name</th>
+                  <th>Present</th>
+                  <th>Absent</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let student of pagedStudents; let i = index">
+                  <td>{{ student.enrollmentId }}</td>
+                  <td>{{ student.name }}</td>
+                  <td>
+                      <input type="radio" [(ngModel)]="student.attendance" [value]="'present'" name="attendance_{{ i }}">
+                  </td>
+                  <td>
+                      <input type="radio" [(ngModel)]="student.attendance" [value]="'absent'" name="attendance_{{ i }}">
+                  </td>
+              </tr>
+          </tbody>
       </table>
       <button type="submit">Submit Attendance</button>
-    </form>
+  </form>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+      <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ (students.length / pageSize) }}</span>
+      <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === (students.length / pageSize) ">Next</button>
+  </div>
 </div>
+
+<div class="footer">
+    <p>&copy; 2024 Attendance Management System. All rights reserved.</p>
+  </div>

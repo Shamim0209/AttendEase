@@ -1,49 +1,57 @@
 .dashboard-container {
-    padding: 20px;
-  }
-  
-  .profile-section, .join-classroom-section, .attendance-section {
-    margin-bottom: 30px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  h2 {
-    color: #007bff;
-    margin-bottom: 15px;
-  }
-  
-  input[type="text"] {
-    padding: 8px;
-    width: 60%;
-    margin-right: 10px;
-  }
-  
-  button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ccc;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
+  padding: 20px;
+}
+
+.profile-section,
+.join-classroom-section,
+.attendance-section {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e9ecef;
+}

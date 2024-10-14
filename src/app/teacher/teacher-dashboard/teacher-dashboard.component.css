@@ -1,14 +1,66 @@
-.dashboard {
-    padding: 20px;
-    background-color: #e5eaf0;
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
 }
 
-#eclass {
+.header {
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
     text-align: center;
-    font-weight: bolder;
-    color: dimgrey;
-    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header nav ul li {
+    display: inline;
+}
+
+.header nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.header nav ul li a:hover {
+    color: #e67e22;
+}
+
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 10px; /* Reduced height */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.dashboard {
+    padding: 40px;
+    background-color: #f5f7fa;
+    min-height: 80vh;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #2c3e50;
 }
 
 .button-container {
@@ -19,7 +71,7 @@
 }
 
 button {
-    background-color: #0288d1;
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -30,13 +82,12 @@ button {
 }
 
 button:hover {
-    background-color: #01579b;
+    background-color: #2980b9;
 }
 
-/* Popup Form Styling */
 .popup-form {
     background-color: #fff;
-    border: 2px solid #0288d1;
+    border: 2px solid #27ae60;
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
@@ -46,7 +97,7 @@ button:hover {
 
 .popup-form h3 {
     text-align: center;
-    color: #0288d1;
+    color: #27ae60;
     margin-bottom: 20px;
 }
 
@@ -54,18 +105,17 @@ button:hover {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #444;
+    color: #2c3e50;
 }
 
 .popup-form input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #bdc3c7;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-/* Padding between form buttons */
 .popup-form button {
     width: 100%;
     padding: 12px;
@@ -74,29 +124,28 @@ button:hover {
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .popup-form button:hover {
-    background-color: #388e3c;
+    background-color: #2ecc71;
 }
 
 .popup-form button[type="button"] {
-    background-color: #e53935;
+    background-color: #e74c3c;
 }
 
 .popup-form button[type="button"]:hover {
-    background-color: #c62828;
+    background-color: #c0392b;
 }
 
-/* Existing Classes */
 .existing-classes {
     margin-top: 30px;
     text-align: center;
 }
 
 .class-card {
-    border: 1px solid #ccc;
+    border: 1px solid #bdc3c7;
     border-radius: 10px;
     padding: 20px;
     background-color: #fff;
@@ -113,22 +162,22 @@ button:hover {
 }
 
 .class-card h4 {
-    color: #444;
+    color: #34495e;
     font-size: 20px;
 }
 
 .class-card p {
-    color: #666;
+    color: #7f8c8d;
 }
 
 .class-card button {
-    background-color: #039be5;
+    background-color: #16a085;
     width: 100%;
     margin-top: 15px;
 }
 
 .class-card button:hover {
-    background-color: #0277bd;
+    background-color: #1abc9c;
 }
 
 @media (max-width: 768px) {
