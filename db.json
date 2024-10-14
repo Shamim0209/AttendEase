@@ -142,7 +142,7 @@
         "enrollmentId": "11223344",
         "name": "Arjun Desai",
         "email": "arjundesai@example.com",
-        "attendance": "present",
+        "attendance": "absent",
         "classes": ["React", "SpringBoot", "Angular", "Python"],
         "password": "arjunPassword333"
       },
