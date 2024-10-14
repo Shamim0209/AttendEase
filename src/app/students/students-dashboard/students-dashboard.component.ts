@@ -26,6 +26,8 @@ interface Class {
   styleUrls: ['./students-dashboard.component.css']
 })
 export class StudentsDashboardComponent implements OnInit {
+stayOnPage($event: MouseEvent) {
+event?.preventDefault()}
   studentProfile: Student | null = null;
   classAttendance: { className: string; totalClasses: number; attendedClasses: number; }[] = [];
   classCode: string = '';
@@ -37,7 +39,7 @@ export class StudentsDashboardComponent implements OnInit {
 
     console.log(studentId);
     
-    
+ 
     if (studentId) {
       this.fetchData().subscribe(
         data => {

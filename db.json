@@ -1,223 +1,244 @@
 {
-    "classes": [
-      {
-        "id": 1,
-        "name": "Angular",
-        "description": "Introduction to Angular",
-        "students": 30,
-        "code": "ANG67890"
-      },
-      {
-        "id": 2,
-        "name": "SpringBoot",
-        "description": "Basic SpringBoot",
-        "students": 30,
-        "code": "SPR34567"
-      },
-      {
-        "id": 3,
-        "name": "Docker",
-        "description": "Introduction to Docker",
-        "students": 25,
-        "code": "DOC34521"
-      },
-      {
-        "id": 4,
-        "name": "React",
-        "description": "React Fundamentals",
-        "students": 28,
-        "code": "RCT12345"
-      },
-      {
-        "id": 5,
-        "name": "Node.js",
-        "description": "Backend with Node.js",
-        "students": 32,
-        "code": "NJS54321"
-      },
-      {
-        "id": 6,
-        "name": "Python",
-        "description": "Intro to Python Programming",
-        "students": 35,
-        "code": "PYT98765"
-      },
-      {
-        "id": 7,
-        "name": "Kubernetes",
-        "description": "Managing Containers with Kubernetes",
-        "students": 20,
-        "code": "KUB23456"
-      },
-      {
-        "id": 8,
-        "name": "TypeScript",
-        "description": "Advanced TypeScript",
-        "students": 27,
-        "code": "TSP87654"
-      }
-    ],
-    "students": [
-      {
-        "enrollmentId": "12345678",
-        "name": "Rajesh Kumar",
-        "email": "rajeshkumar@example.com",
-        "attendance": "present",
-        "classes": ["Angular", "React", "Node.js", "Python"],
-        "password": "rajeshPassword123"
-      },
-      {
-        "enrollmentId": "87654321",
-        "name": "Aarti Sharma",
-        "email": "aartisharma@example.com",
-        "attendance": "absent",
-        "classes": ["SpringBoot", "Docker", "Kubernetes", "TypeScript"],
-        "password": "aartiPassword456"
-      },
-      {
-        "enrollmentId": "23456789",
-        "name": "Aman Verma",
-        "email": "amanverma@example.com",
-        "attendance": "present",
-        "classes": ["Angular", "Docker", "Python", "React"],
-        "password": "amanPassword789"
-      },
-      {
-        "enrollmentId": "98765432",
-        "name": "Priya Singh",
-        "email": "priyasingh@example.com",
-        "attendance": "present",
-        "classes": ["Node.js", "SpringBoot", "TypeScript", "Kubernetes"],
-        "password": "priyaPassword321"
-      },
-      {
-        "enrollmentId": "34567890",
-        "name": "Rohit Patel",
-        "email": "rohitpatel@example.com",
-        "attendance": "absent",
-        "classes": ["Docker", "React", "Python", "Angular"],
-        "password": "rohitPassword654"
-      },
-      {
-        "enrollmentId": "87651234",
-        "name": "Sanya Mehta",
-        "email": "sanyamehta@example.com",
-        "attendance": "present",
-        "classes": ["Node.js", "Kubernetes", "TypeScript", "SpringBoot"],
-        "password": "sanyaPassword789"
-      },
-      {
-        "enrollmentId": "56789712",
-        "name": "Karan Malhotra",
-        "email": "karanmalhotra@example.com",
-        "attendance": "present",
-        "classes": ["React", "Angular", "Python", "Docker"],
-        "password": "karanPassword456"
-      },
-      {
-        "enrollmentId": "09876543",
-        "name": "Neha Gupta",
-        "email": "nehagupta@example.com",
-        "attendance": "absent",
-        "classes": ["SpringBoot", "Kubernetes", "TypeScript", "Node.js"],
-        "password": "nehaPassword123"
-      },
-      {
-        "enrollmentId": "43215678",
-        "name": "Vikas Nair",
-        "email": "vikasnair@example.com",
-        "attendance": "present",
-        "classes": ["Angular", "Docker", "React", "SpringBoot"],
-        "password": "vikasPassword111"
-      },
-      {
-        "enrollmentId": "87650987",
-        "name": "Rekha Reddy",
-        "email": "rekhareddy@example.com",
-        "attendance": "absent",
-        "classes": ["Kubernetes", "Python", "TypeScript", "Node.js"],
-        "password": "rekhaPassword222"
-      },
-      {
-        "enrollmentId": "11223344",
-        "name": "Arjun Desai",
-        "email": "arjundesai@example.com",
-        "attendance": "present",
-        "classes": ["React", "SpringBoot", "Angular", "Python"],
-        "password": "arjunPassword333"
-      },
-      {
-        "enrollmentId": "22334455",
-        "name": "Meera Kapoor",
-        "email": "meerakapoor@example.com",
-        "attendance": "absent",
-        "classes": ["Docker", "Kubernetes", "Node.js", "TypeScript"],
-        "password": "meeraPassword444"
-      },
-      {
-        "enrollmentId": "33445566",
-        "name": "Abhishek Joshi",
-        "email": "abhishekjoshi@example.com",
-        "attendance": "present",
-        "classes": ["Angular", "Python", "SpringBoot", "Docker"],
-        "password": "abhishekPassword555"
-      },
-      {
-        "enrollmentId": "44556677",
-        "name": "Pooja Iyer",
-        "email": "poojaiyer@example.com",
-        "attendance": "absent",
-        "classes": ["Kubernetes", "React", "TypeScript", "Node.js"],
-        "password": "poojaPassword666"
-      },
-      {
-        "enrollmentId": "55667788",
-        "name": "Ravi Bhatt",
-        "email": "ravibhatt@example.com",
-        "attendance": "present",
-        "classes": ["Python", "Angular", "SpringBoot", "Docker"],
-        "password": "raviPassword777"
-      },
-      {
-        "enrollmentId": "66778899",
-        "name": "Anjali Rao",
-        "email": "anjalirao@example.com",
-        "attendance": "present",
-        "classes": ["Kubernetes", "React", "TypeScript", "Node.js"],
-        "password": "anjaliPassword888"
-      },
-      {
-        "enrollmentId": "77889900",
-        "name": "Devansh Shah",
-        "email": "devanshshah@example.com",
-        "attendance": "present",
-        "classes": ["Docker", "SpringBoot", "Python", "Angular"],
-        "password": "devanshPassword999"
-      },
-      {
-        "enrollmentId": "88990011",
-        "name": "Nisha Aggarwal",
-        "email": "nishaaggarwal@example.com",
-        "attendance": "absent",
-        "classes": ["TypeScript", "React", "Node.js", "Kubernetes"],
-        "password": "nishaPassword000"
-      },
-      {
-        "enrollmentId": "99001122",
-        "name": "Rakesh Pillai",
-        "email": "rakeshpillai@example.com",
-        "attendance": "present",
-        "classes": ["SpringBoot", "Angular", "Python", "React"],
-        "password": "rakeshPassword101"
-      },
-      {
-        "enrollmentId": "10111213",
-        "name": "Vikram Chatterjee",
-        "email": "vikramchatterjee@example.com",
-        "attendance": "absent",
-        "classes": ["Node.js", "Kubernetes", "TypeScript", "Docker"],
-        "password": "vikramPassword202"
-      }
-    ]
-  }
-  
+  "classes": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "description": "Introduction to Angular",
+      "students": 30,
+      "code": "ANG67890"
+    },
+    {
+      "id": 2,
+      "name": "SpringBoot",
+      "description": "Basic SpringBoot",
+      "students": 30,
+      "code": "SPR34567"
+    },
+    {
+      "id": 3,
+      "name": "Docker",
+      "description": "Introduction to Docker",
+      "students": 25,
+      "code": "DOC34521"
+    },
+    {
+      "id": 4,
+      "name": "React",
+      "description": "React Fundamentals",
+      "students": 28,
+      "code": "RCT12345"
+    },
+    {
+      "id": 5,
+      "name": "Node.js",
+      "description": "Backend with Node.js",
+      "students": 32,
+      "code": "NJS54321"
+    },
+    {
+      "id": 6,
+      "name": "Python",
+      "description": "Intro to Python Programming",
+      "students": 35,
+      "code": "PYT98765"
+    },
+    {
+      "id": 7,
+      "name": "Kubernetes",
+      "description": "Managing Containers with Kubernetes",
+      "students": 20,
+      "code": "KUB23456"
+    },
+    {
+      "id": 8,
+      "name": "TypeScript",
+      "description": "Advanced TypeScript",
+      "students": 27,
+      "code": "TSP87654"
+    }
+  ],
+  "students": [
+    {
+      "enrollmentId": "12345678",
+      "name": "Rajesh Kumar",
+      "email": "rajeshkumar@example.com",
+      "attendance": "present",
+      "classes": ["Angular", "React", "Node.js", "Python"],
+      "password": "rajeshPassword123"
+    },
+    {
+      "enrollmentId": "87654321",
+      "name": "Aarti Sharma",
+      "email": "aartisharma@example.com",
+      "attendance": "absent",
+      "classes": ["SpringBoot", "Docker", "Kubernetes", "TypeScript"],
+      "password": "aartiPassword456"
+    },
+    {
+      "enrollmentId": "23456789",
+      "name": "Aman Verma",
+      "email": "amanverma@example.com",
+      "attendance": "present",
+      "classes": ["Angular", "Docker", "Python", "React"],
+      "password": "amanPassword789"
+    },
+    {
+      "enrollmentId": "98765432",
+      "name": "Priya Singh",
+      "email": "priyasingh@example.com",
+      "attendance": "present",
+      "classes": ["Node.js", "SpringBoot", "TypeScript", "Kubernetes"],
+      "password": "priyaPassword321"
+    },
+    {
+      "enrollmentId": "34567890",
+      "name": "Rohit Patel",
+      "email": "rohitpatel@example.com",
+      "attendance": "absent",
+      "classes": ["Docker", "React", "Python", "Angular"],
+      "password": "rohitPassword654"
+    },
+    {
+      "enrollmentId": "87651234",
+      "name": "Sanya Mehta",
+      "email": "sanyamehta@example.com",
+      "attendance": "present",
+      "classes": ["Node.js", "Kubernetes", "TypeScript", "SpringBoot"],
+      "password": "sanyaPassword789"
+    },
+    {
+      "enrollmentId": "56789712",
+      "name": "Karan Malhotra",
+      "email": "karanmalhotra@example.com",
+      "attendance": "present",
+      "classes": ["React", "Angular", "Python", "Docker"],
+      "password": "karanPassword456"
+    },
+    {
+      "enrollmentId": "09876543",
+      "name": "Neha Gupta",
+      "email": "nehagupta@example.com",
+      "attendance": "absent",
+      "classes": ["SpringBoot", "Kubernetes", "TypeScript", "Node.js"],
+      "password": "nehaPassword123"
+    },
+    {
+      "enrollmentId": "43215678",
+      "name": "Vikas Nair",
+      "email": "vikasnair@example.com",
+      "attendance": "present",
+      "classes": ["Angular", "Docker", "React", "SpringBoot"],
+      "password": "vikasPassword111"
+    },
+    {
+      "enrollmentId": "87650987",
+      "name": "Rekha Reddy",
+      "email": "rekhareddy@example.com",
+      "attendance": "absent",
+      "classes": ["Kubernetes", "Python", "TypeScript", "Node.js"],
+      "password": "rekhaPassword222"
+    },
+    {
+      "enrollmentId": "11223344",
+      "name": "Arjun Desai",
+      "email": "arjundesai@example.com",
+      "attendance": "present",
+      "classes": ["React", "SpringBoot", "Angular", "Python"],
+      "password": "arjunPassword333"
+    },
+    {
+      "enrollmentId": "22334455",
+      "name": "Meera Kapoor",
+      "email": "meerakapoor@example.com",
+      "attendance": "absent",
+      "classes": ["Docker", "Kubernetes", "Node.js", "TypeScript"],
+      "password": "meeraPassword444"
+    },
+    {
+      "enrollmentId": "33445566",
+      "name": "Abhishek Joshi",
+      "email": "abhishekjoshi@example.com",
+      "attendance": "present",
+      "classes": ["Angular", "Python", "SpringBoot", "Docker"],
+      "password": "abhishekPassword555"
+    },
+    {
+      "enrollmentId": "44556677",
+      "name": "Pooja Iyer",
+      "email": "poojaiyer@example.com",
+      "attendance": "absent",
+      "classes": ["Kubernetes", "React", "TypeScript", "Node.js"],
+      "password": "poojaPassword666"
+    },
+    {
+      "enrollmentId": "55667788",
+      "name": "Ravi Bhatt",
+      "email": "ravibhatt@example.com",
+      "attendance": "present",
+      "classes": ["Python", "Angular", "SpringBoot", "Docker"],
+      "password": "raviPassword777"
+    },
+    {
+      "enrollmentId": "66778899",
+      "name": "Anjali Rao",
+      "email": "anjalirao@example.com",
+      "attendance": "present",
+      "classes": ["Kubernetes", "React", "TypeScript", "Node.js"],
+      "password": "anjaliPassword888"
+    },
+    {
+      "enrollmentId": "77889900",
+      "name": "Devansh Shah",
+      "email": "devanshshah@example.com",
+      "attendance": "present",
+      "classes": ["Docker", "SpringBoot", "Python", "Angular"],
+      "password": "devanshPassword999"
+    },
+    {
+      "enrollmentId": "88990011",
+      "name": "Nisha Aggarwal",
+      "email": "nishaaggarwal@example.com",
+      "attendance": "absent",
+      "classes": ["TypeScript", "React", "Node.js", "Kubernetes"],
+      "password": "nishaPassword000"
+    },
+    {
+      "enrollmentId": "99001122",
+      "name": "Rakesh Pillai",
+      "email": "rakeshpillai@example.com",
+      "attendance": "present",
+      "classes": ["SpringBoot", "Angular", "Python", "React"],
+      "password": "rakeshPassword101"
+    },
+    {
+      "enrollmentId": "10111213",
+      "name": "Vikram Chatterjee",
+      "email": "vikramchatterjee@example.com",
+      "attendance": "absent",
+      "classes": ["Node.js", "Kubernetes", "TypeScript", "Docker"],
+      "password": "vikramPassword202"
+    }
+  ],
+  "admin": [
+    {
+      "adminUniqueId": "ADM001",
+      "password": "adminPassword001"
+    },
+    {
+      "adminUniqueId": "ADM002",
+      "password": "adminPassword002"
+    },
+    {
+      "adminUniqueId": "ADM003",
+      "password": "adminPassword003"
+    },
+    {
+      "adminUniqueId": "ADM004",
+      "password": "adminPassword004"
+    },
+    {
+      "adminUniqueId": "admin",
+      "password": "password"
+    }
+  ]
+}

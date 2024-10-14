@@ -8,6 +8,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./take-attendance.component.css']
 })
 export class TakeAttendanceComponent implements OnInit {
+stayOnPage($event: MouseEvent) {
+event?.preventDefault();
+}
 
   classroomName: string = '';
   classroomDescription: string = '';
@@ -19,6 +22,7 @@ export class TakeAttendanceComponent implements OnInit {
   currentPage = 1; 
   pagedStudents: any[] = [];
   totalPages: number = 0; 
+  successMessage: string='';
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
@@ -58,6 +62,15 @@ export class TakeAttendanceComponent implements OnInit {
 
   // Submit the attendance form and log the students' data
   submitAttendance() {
-    console.log('Attendance submitted:', this.students);
+    const currentDateTime = new Date();
+    
+    // Display the success message
+    this.successMessage = `Attendance is submitted successfully on ${currentDateTime.toLocaleDateString()} at ${currentDateTime.toLocaleTimeString()}`;
+    
+    // Clear the attendance (reset checkboxes)
+    this.students.forEach(student => {
+      student.attendance = ''; // Reset attendance for each student
+    });
   }
+  
 }

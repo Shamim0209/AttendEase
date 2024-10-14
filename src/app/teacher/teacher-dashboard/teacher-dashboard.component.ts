@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./teacher-dashboard.component.css']
 })
 export class TeacherDashboardComponent implements OnInit {
+stayOnPage($event: MouseEvent) {
+event?.preventDefault();
+}
   showClassroomForm: boolean = false;
   showActiveRequests: boolean = false;
   uniqueCode: string = '';
