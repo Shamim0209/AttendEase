@@ -1,26 +1,40 @@
-<div class="dashboard-container" *ngIf="studentProfile">
+<div class="header">
+  <h1 style="padding-bottom: 10px">Attendance Management System - Student Dashboard</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="dashboard">
   <!-- Student Profile Section -->
-  <section class="profile-section">
-    <h2>Student Profile</h2>
+  <div class="profile-section" *ngIf="studentProfile">
+    <h3>Student Profile</h3>
     <p><strong>Name:</strong> {{ studentProfile.name }}</p>
     <p><strong>Enrollment Number:</strong> {{ studentProfile.enrollmentId }}</p>
     <p><strong>Email:</strong> {{ studentProfile.email }}</p>
-    <p><strong>Classes:</strong> 
+    <p><strong>Classes:</strong>
       <span *ngIf="studentProfile.classes.length > 0">{{ studentProfile.classes.join(', ') }}</span>
       <span *ngIf="studentProfile.classes.length === 0">No classes assigned.</span>
     </p>
-  </section>
+  </div>
 
   <!-- Join Classroom Section -->
-  <section class="join-classroom-section">
-    <h2>Join a Classroom</h2>
-    <input type="text" placeholder="Enter Class Code" [(ngModel)]="classCode" />
-    <button (click)="joinClassroom()">Join Classroom</button>
-  </section>
-
+  <div class="join-classroom-section">
+    <h3>Join a Classroom</h3>
+    <div class="join-classroom-container">
+      <input type="text" placeholder="Enter Class Code" [(ngModel)]="classCode" class="class-code-input" />
+      <button (click)="joinClassroom()" class="join-button">Join Classroom</button>
+    </div>
+  </div>
+  
   <!-- Attendance Section -->
-  <section class="attendance-section" *ngIf="classAttendance.length > 0">
-    <h2>Class Attendance</h2>
+  <div class="attendance-section" *ngIf="classAttendance.length > 0">
+    <h3>Class Attendance</h3>
     <table>
       <thead>
         <tr>
@@ -39,14 +53,13 @@
         </tr>
       </tbody>
     </table>
-  </section>
+  </div>
 
-  <section *ngIf="classAttendance.length === 0">
+  <div class="no-attendance-section" *ngIf="classAttendance.length === 0">
     <p>No attendance records available.</p>
-  </section>
+  </div>
 </div>
 
-<!-- If no student profile is found -->
-<div *ngIf="!studentProfile" class="no-profile-section">
-  <p>Student profile not found. Please check the enrollment ID.</p>
+<div class="footer">
+  <p>&copy; 2024 Attendance Management System. All rights reserved.</p>
 </div>

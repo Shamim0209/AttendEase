@@ -14,13 +14,13 @@ const routes: Routes = [
   {path: 'admin/signup', component: SignupComponent},
   { path: 'admin/login', component: LoginComponent },
   {path: 'students/signup-student', component: SignupStudentComponent},
-  { path: 'students/:id', component: StudentsDashboardComponent },
+  { path: 'students/:enrollmentId', component: StudentsDashboardComponent },
   { path: 'teacher/dashboard', component: TeacherDashboardComponent },
   { path: 'teacher/take-attendance', component: TakeAttendanceComponent },
   {
     path:'student/login' ,component:StudentLoginComponent
-  }
-
+  },
+  
 ];
 
 @NgModule({

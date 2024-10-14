@@ -33,9 +33,9 @@ export class StudentsDashboardComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    const studentId = this.route.snapshot.paramMap.get('id'); // This should capture the 'id' from the route
+    const studentId = this.route.snapshot.paramMap.get('enrollmentId'); // This should capture the 'id' from the route
 
-    // console.log(studentId);
+    console.log(studentId);
     
     
     if (studentId) {
@@ -44,7 +44,7 @@ export class StudentsDashboardComponent implements OnInit {
           console.log('Fetched data:', data);
   
           if (data && Array.isArray(data)) {
-            const student = data.find(s => s.id === studentId);
+            const student = data.find(s => s.enrollmentId === studentId);
 
             console.log(student);
             
