@@ -35,9 +35,9 @@
         <label for="subject">Subject</label>
         <input [(ngModel)]="subject" name="subject" required>
       </div>
-      <div>
+      <!-- <div>
         <label>Unique Code: {{ uniqueCode }}</label>
-      </div>
+      </div> -->
       <button type="submit">Create</button>
       <button type="button" (click)="toggleClassroomForm()">Close</button>
     </form>
@@ -46,6 +46,7 @@
   <!-- Popup for Active Requests -->
   <div *ngIf="showActiveRequests" class="popup-form">
     <h3>Active Student Requests</h3>
+    <p>No Requests Found</p>
     <button (click)="toggleActiveRequests()">Accept Requests</button>
     <button (click)="toggleActiveRequests()" style="background-color:#e53935;">Decline Requests</button>
   </div>
