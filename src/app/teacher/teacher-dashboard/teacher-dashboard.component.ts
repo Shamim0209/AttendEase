@@ -12,8 +12,8 @@ export class TeacherDashboardComponent implements OnInit {
   showActiveRequests: boolean = false;
   uniqueCode: string = '';
   existingClasses: any[] = [];
-  classroomName: any;
-  classroomDescription: any;
+  classroomName: string = '';
+  classroomDescription: string = '';
   subject: string | undefined;
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -32,7 +32,15 @@ export class TeacherDashboardComponent implements OnInit {
 
   // Toggle Classroom Form
   toggleClassroomForm() {
+    // If the "Active Requests" form is open, close it first
+    if (this.showActiveRequests) {
+      this.showActiveRequests = false;
+    }
+    
+    // Toggle the Classroom Form
     this.showClassroomForm = !this.showClassroomForm;
+
+    // If the Classroom Form is opened, generate a unique code
     if (this.showClassroomForm) {
       this.generateUniqueCode();
     }
@@ -40,6 +48,12 @@ export class TeacherDashboardComponent implements OnInit {
 
   // Toggle Active Requests Form
   toggleActiveRequests() {
+    // If the "Create Classroom" form is open, close it first
+    if (this.showClassroomForm) {
+      this.showClassroomForm = false;
+    }
+
+    // Toggle the Active Requests Form
     this.showActiveRequests = !this.showActiveRequests;
   }
 
@@ -58,7 +72,7 @@ export class TeacherDashboardComponent implements OnInit {
     };
     this.existingClasses.push(newClassroom);
     this.clearForm();
-    this.toggleClassroomForm();
+    this.toggleClassroomForm(); // Close the form after creating the classroom
   }
 
   clearForm() {

@@ -16,7 +16,7 @@ export class LoginComponent {
   onSubmit() {
     
     if (this.uniqueId === 'admin' && this.password === 'password') {
-      this.router.navigate(['/admin']); 
+      this.router.navigate(['teacher/dashboard']); 
     } else {
       this.errorMessage = 'Invalid Unique ID or password';
     }

@@ -10,46 +10,52 @@
     </nav>
   </div>
 <div class="attendance-page">
-  <h2>Take Attendance for {{ classroomName }}</h2>
-  <p style="font-weight: bolder;">Subject Code : {{ classCode }}</p>
-  <p>{{ classroomDescription }}</p>
-  <p>No. of Students: {{ studentsCount }}</p>
-  <p>Date: {{ currentDate | date: 'fullDate' }}</p>
+    <h2>Take Attendance for {{ classroomName }}</h2>
+    <p class="subject-code">Subject Code: {{ classCode }}</p>
+    <p class="description">{{ classroomDescription }}</p>
+    <p class="student-count">No. of Students: {{ studentsCount }}</p>
+    <p class="date">Date: {{ currentDate | date: 'fullDate' }}</p>
 
-  <form (ngSubmit)="submitAttendance()">
-      <table>
-          <thead>
-              <tr>
-                  <th>Enrollment ID</th>
-                  <th>Student Name</th>
-                  <th>Present</th>
-                  <th>Absent</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let student of pagedStudents; let i = index">
-                  <td>{{ student.enrollmentId }}</td>
-                  <td>{{ student.name }}</td>
-                  <td>
-                      <input type="radio" [(ngModel)]="student.attendance" [value]="'present'" name="attendance_{{ i }}">
-                  </td>
-                  <td>
-                      <input type="radio" [(ngModel)]="student.attendance" [value]="'absent'" name="attendance_{{ i }}">
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-      <button type="submit">Submit Attendance</button>
-  </form>
+    <form (ngSubmit)="submitAttendance()">
+        <table>
+            <thead>
+                <tr>
+                    <th>Enrollment ID</th>
+                    <th>Student Name</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of pagedStudents; let i = index">
+                    <td>{{ student.enrollmentId }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>
+                        <label class="checkbox-label">
+                            <input type="radio" [(ngModel)]="student.attendance" [value]="'present'" name="attendance_{{ i }}" required>
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="checkbox-label">
+                            <input type="radio" [(ngModel)]="student.attendance" [value]="'absent'" name="attendance_{{ i }}" required>
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-  <!-- Pagination Controls -->
-  <div class="pagination">
-      <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
-      <span>Page {{ currentPage }} of {{ (students.length / pageSize) }}</span>
-      <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === (students.length / pageSize) ">Next</button>
-  </div>
+        <div class="pagination">
+            <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1"><</button>
+            <span>Page {{ currentPage }} of {{ totalPages }}</span>
+            <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">></button>
+        </div>
+
+        <button type="submit">Submit Attendance</button>
+    </form>
 </div>
-
 <div class="footer">
     <p>&copy; 2024 Attendance Management System. All rights reserved.</p>
   </div>
+  

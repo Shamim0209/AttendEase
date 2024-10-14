@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -15,42 +15,49 @@ export class TakeAttendanceComponent implements OnInit {
   classCode: string = '';
   currentDate = new Date();
   students: any[] = [];
-  pageSize = 10;  // Items per page
-  currentPage = 1; // Start from first page
+  pageSize = 10;  
+  currentPage = 1; 
   pagedStudents: any[] = [];
+  totalPages: number = 0; 
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Retrieve classroom details from query params
+    // Fetch classroom details from query parameters
     this.route.queryParams.subscribe(params => {
       this.classroomName = params['name'] || 'Unknown Classroom';
       this.classroomDescription = params['description'] || 'No Description Available';
       this.classCode = params['code'] || 'Classroom Code Not Available';
     });
 
-    // Fetch students from db.json
+    // Fetch the list of students
     this.getStudents();
   }
 
+  // Fetch the student data from the mock database and initialize attendance to null
   getStudents() {
     this.http.get<any[]>('http://localhost:3000/students')
       .subscribe(data => {
-        this.students = data;
+        this.students = data.map(student => ({
+          ...student,
+          attendance: null  
+        }));
         this.studentsCount = this.students.length;
-        this.setPage(1); // Display the first page of students
+        this.totalPages = Math.ceil(this.students.length / this.pageSize); 
+        this.setPage(1);  // Load the first page
       });
   }
 
   setPage(page: number) {
+    if (page < 1 || page > this.totalPages) return; 
     this.currentPage = page;
     const startIndex = (page - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    this.pagedStudents = this.students.slice(startIndex, endIndex);
+    this.pagedStudents = this.students.slice(startIndex, endIndex);  // Display 10 students per page
   }
 
+  // Submit the attendance form and log the students' data
   submitAttendance() {
     console.log('Attendance submitted:', this.students);
-    // Additional logic for handling attendance submission
   }
 }
